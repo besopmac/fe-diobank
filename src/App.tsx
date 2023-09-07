@@ -1,14 +1,14 @@
-import { Layout } from "./components/Layout"
+import { Layout } from "./components/Layout";
+import { Box, Input } from '@chakra-ui/react'
 
 function App() {
   return (
     <Layout>
-      <h1>Faça o login</h1>
-      <label htmlFor="emailInput">Email</label>
-      <input type="email" id="emailInput" />
-      <label htmlFor="passwordInput">Senha</label>
-      <input type="password" id="passwordInput" />
-      <button>Entrar</button>
+      <Box minHeight='100vh'>
+        <h1>Faça o login</h1>
+        <Input placeholder="Email" type="email" />
+        <Input placeholder="Password" type="password" />
+      </Box>
     </Layout>
   )
 }

@@ -1,20 +1,19 @@
-import { Layout } from "./components/Layout";
-import { Box, Button, Center, Input } from '@chakra-ui/react'
 import { login } from "./services/login";
+import { Layout } from "./components/Layout";
+import { CustomButton } from "./components/Button";
+import { Card, Heading, Input, Stack } from '@chakra-ui/react'
 
 function App() {
   return (
     <Layout>
-      <Box minHeight="100vh" padding="25px">
-        <Box minHeight='100vh' padding="50px">
-          <Center>
-            <h1>Faça o login</h1>
-          </Center>
-          <Input placeholder="Email" type="email" />
-          <Input placeholder="Password" type="password" />
-          <Button onClick={login} colorScheme="teal" size="sm" width='100%'>Entrar</Button>
-        </Box>
-      </Box>
+      <Card margin={10} shadow={"lg"} width={"25%"} marginX={"auto"}>
+        <Stack gap={2.5} padding={10}>
+          <Heading as="h3" size={"md"} textAlign={"center"} marginBottom={5}>Faça o login</Heading>
+          <Input placeholder="Email" type="email" size={"lg"} />
+          <Input placeholder="Password" type="password" size={"lg"} />
+          <CustomButton size="lg" onClick={login}>Entrar</CustomButton>
+        </Stack>
+      </Card>
     </Layout>
   )
 }
